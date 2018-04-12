@@ -1,0 +1,16 @@
+There is no need to create SQL script files to create the database manually.
+
+In the server.py file I have written code to create database called 'machine.db' and in this database I created a table called 'data'.
+
+# connect to the database
+conn = sqlite3.connect('machine.db')
+
+c = conn.cursor()
+
+#We can create the table by uncommenting below lines. So, comment or uncomment the below lines depending upon whether table already exists in database or not
+# Create table
+c.execute('''CREATE TABLE data
+           (DateTime text, IP text, Port text, Username text, Password text, Mail text, totalMemory real, availableMemory real, percent real, usedMemory real, freeMemory real, cpuUsage real, Uptime real)''')
+
+
+
